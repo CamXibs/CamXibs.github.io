@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta  charset = "utf-8"/>	<meta  name = "viewport"  content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <style>
+	  img{
+	  width:100%;
+	height:auto";
+	}
+</style>
+	</head>
+  <body>
+<h1>/agent</h1>
+<p>作用：agnet系列命令(只能由websocket服务端发送执行)
+agent create
+创建Agent(如果没有agent)
+agent move <方向>
+向指定方向移动1格
+agent turn <方向>
+转向(仅left和right)
+agent attack <方向>
+攻击指定方向一格内的实体
+agent destroy <方向>
+破坏指定方向一格的方块
+agent drop <背包槽位:int> <数量:int> <方向>
+抛出一定数量的物品到指定方向
+agent drop all <方向>
+向指定方向抛出背包所有的物品
+agent detect <方向>
+检测指定方向是否有方块阻挡
+agent detectredstone 方向
+检测指定方向方块是否为充能状态
+agent inspect <方向>
+检查指定方向方块的id并返回
+agent inspectdata <方向>
+检查指定方向方块的数据
+agent tp
+将agent传送到玩家位置
+agent collect <物品id>
+收集agent半径内一格的指定物品
+agent place <背包槽位:int> <方向>
+放置agent指定槽位的物品到指定方向
+agent till <方向>
+向指定方向耕地
+agent getitemcount <背包槽位:int>
+返回agent背包指定槽位的物品数量
+agent getitemspace <背包槽位:int>
+返回agent背包指定槽位的剩余可堆叠物品数量
+agent getitemdetail <背包槽位:int>
+返回agent背包指定槽位的物品id
+agent transfer <背包槽位1:int> <数量:int> <背包槽位2:int>
+将agent背包内指定数量的槽位1的物品移到槽位2
+ps:方向包括forward|back|left|right|up|down</p>
+  </body>
+</html>
