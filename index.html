@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=0.8,maximum-scale=0.8,minimum-scale=0.8,user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>重复名生成</title>
+<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.2/css/mdui.min.css">
+</head>
+<body>
+  <div class="mdui-container">
+    <div class="mdui-textfield">
+      <input class="mdui-textfield-input" type="text" id="name" placeholder="Input your name"/>
+    </div>
+    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" onclick="create()">确定</button>
+    <div class="mdui-textfield">
+      <input class="mdui-textfield-input" type="text" id="name" placeholder="Input your name"/>
+    </div>
+    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" onclick="copy()">复制</button>
+  </div>
+</body>
+<script>
+function create(){
+    let name = document.getElementById("name").value;
+    let codes = [8203,8204,8292,8289,8292,65279];
+    let code = String.fromCharCode(codes[random(0,5)],codes[random(0,5)]);
+    document.getElementById("result").value = code + name;
+    //8296 8289 8292 8203 65279 8204
+    //重复就换，随意组合，嘤嘤嘤
+}
+function copy(){
+    let resultname=document.getElementById("result");
+    resultname.select(); // 选择对象
+    document.execCommand("Copy"); // 执行浏览器复制命令
+    alert("复制成功");
+}
+function random(minNum,maxNum){ 
+    switch(arguments.length){ 
+        case 1: 
+            return parseInt(Math.random()*minNum+1,10); 
+        break; 
+        case 2: 
+            return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10); 
+        break; 
+            default: 
+                return 0; 
+            break; 
+    } 
+} 
+</script>
